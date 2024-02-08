@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_estate_account_entry_form">
+            <field name="name">estate_account.entry.form</field>
+            <field name="model">estate_account.entry</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="amount"/>
+                            <field name="property_id"/>
+                            <field name="date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_estate_account_entry_tree">
+            <field name="name">estate_account.entry.tree</field>
+            <field name="model">estate_account.entry</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="amount"/>
+                    <field name="property_id"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_estate_account_entry_search">
+            <field name="name">estate_account.entry.search</field>
+            <field name="model">estate_account.entry</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="property_id"/>
+                    <field name="date"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_estate_account_entry">
+            <field name="name">Estate Account Entries</field>
+            <field name="res_model">estate_account.entry</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="menu_estate_account_entry_root"
+            name="Estate Account"
+            sequence="1"
+        />
+        <menuitem
+            id="menu_estate_account_entry"
+            name="Account Entries"
+            parent="menu_estate_account_entry_root"
+            sequence="1"
+            action="action_estate_account_entry"
+        />
+    </data>
+</odoo>
